@@ -1,0 +1,130 @@
+.mainContainer {
+    display: flex;
+    flex: 1;
+    width:95%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.internalContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    background-color: aliceblue;
+}
+.lineContainer{
+    width:100%;
+    border:solid;
+    border-color:#808080;
+    margin-bottom:30px;
+}
+
+.imgContainer{
+    display:flex;
+    flex:0.6;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:flex-start;
+}
+
+.titleStyle{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:large;
+    font-weight:900;
+}
+
+.priceContianer{
+    display:flex;
+    flex:0.4;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-end
+}
+.button {
+    background-color: #f3533c;
+}
+.cartButton {
+    background-color: #deb66e;
+}
+.searchText {
+    margin-bottom: 8px;
+    margin-left: 39px;
+}
+.searchText1 {
+    margin-bottom: 20px;
+    margin-left:39px;
+}
+.black {
+    color: black;
+}
+
+.white {
+    color: white;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.Cyan {
+    color: cyan;
+}
+
+.Magenta {
+    color: magenta
+}
+.contactdetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    width: 600px;
+    padding:15px
+}
+.contactDetailsInputs {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center
+}
+
+.color-picker-container {
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+#image-container {
+    width: 100px;
+    height: 200px;
+    margin-left: 103px;
+}
+
+.color-picker-container h2 {
+    margin-left: 52px;
+}
+
+.color-picker-container td {
+    padding: 10px;
+    vertical-align: top;
+}

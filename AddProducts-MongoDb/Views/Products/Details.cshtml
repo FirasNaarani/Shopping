@@ -1,0 +1,42 @@
+﻿@model AddProducts_MongoDb.Models.Products
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details this product</h1>
+
+<div style="display:flex;justify-content:center;align-items:center">
+    <img height="200" width="200" src="data:image/png;base64,@Model.image"/>
+</div>
+
+<div style="display:flex;justify-content:center;align-items:center;background-color:aliceblue">
+       <div class="row justify-content-around">
+
+           <div style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;margin-bottom:50px">
+               <div>@Html.DisplayNameFor(model => model.title):</div>
+               <div>@Html.DisplayNameFor(model => model.type):</div>
+               <div>@Html.DisplayNameFor(model => model.gender):</div>
+               <div>@Html.DisplayNameFor(model => model.size):</div>
+               <div>@Html.DisplayNameFor(model => model.price):</div>
+               <div>@Html.DisplayNameFor(model => model.color):</div>
+               <div>@Html.DisplayNameFor(model => model.Description):</div>
+               <div>@Html.DisplayNameFor(model => model.brand ):</div>       
+           </div>
+           <div style="display:flex;flex-direction:column;align-items:flex-start;margin-left:60px">
+               <div>@Html.DisplayFor(model => model.title)</div>
+               <div>@Html.DisplayFor(model => model.type)</div>
+               <div>@Html.DisplayFor(model => model.gender)</div>
+               <div>@Html.DisplayFor(model => model.size)</div>
+               <div>@Html.DisplayFor(model => model.price)</div>
+               <div>@Html.DisplayFor(model => model.color)</div>
+               <div>@Html.DisplayFor(model => model.Description)</div>
+               <div>@Html.DisplayFor(model => model.brand)</div>
+           </div>
+
+       </div>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.Id  }) |
+    <a asp-action="Index">Back to List</a>
+</div>

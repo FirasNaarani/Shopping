@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ProductsWebProject.Models.Products>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-row" style="display:flex;justify-content:space-around;align-items:center">
+    <h1>All Products</h1>
+    <form method="get" asp-controller="Home" asp-action="Search">
+        <div class="searchText">
+            <input type="search" name="title" placeholder="Search by name" />
+            <input type="submit" value="search" class="btn-primary" />
+        </div>
+    </form>
+
+    <form method="get" asp-controller="Home" asp-action="SearchColor">
+        <div class="searchText1">
+            <p>
+                Select Color: <input type="color" name="myColor" list="profilecolorslist" style="width:188px;height:30px;margin-top:7.5px">
+                <input type="submit" value="search" class="btn-primary" />
+            </p>
+
+            <datalist id="profilecolorslist">
+                <option value="#000000"/>
+                <option value="#ffffff" />
+                <option value="#ff0000" />
+                <option value="#00ff00" />
+                <option value="#0000ff" />
+                <option value="#ffff00" />
+                <option value="#ffaa00" />
+                <option value="#ff00ff" />
+            </datalist>
+        </div>
+    </form>
+</div>
+<div class="lineContainer"></div>
+
+<div>
+    <img style="width:100%;height:420px;margin-bottom:15px" src="~/Images/GirlsShoppin.jpg" />
+</div>
+
+<div class="mainContainer">
+    @foreach (var item in Model)
+    {
+        <div class="internalContainer ">
+            <div class="row imgContainer">
+                <img height="150" width="150" src="data:image/png;base64,@item.image" />
+                <div class="titleStyle" style="margin-left:10px">
+                    @Html.DisplayFor(modelItem => item.title)
+                </div>
+            </div>
+            <div class=" priceContianer">
+                <div class="titleStyle">
+                    @Html.DisplayFor(modelItem => item.price)₪
+                </div>
+                <div>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) ||
+                    <a class="btn-group-sm" asp-controller="cart" asp-action="buy" asp-route-id="@item.Id">Add To Cart</a>
+                </div>
+            </div>
+
+
+        </div>
+    }
+</div>
+

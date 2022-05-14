@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>MyCart Page</h3>
+    <div class="lineContainer"></div>
+   
+        @if (ViewBag.cart == null)
+        {
+            <div>
+                No Data In Cart
+            </div>
+        }else{
+
+            <table class="table">
+    <thead>
+        <tr>
+             <th>
+               Description
+            </th>
+            <th>
+                price
+            </th>
+            <th>
+               Quantity
+            </th>
+             <th>
+                total price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in ViewBag.cart)
+        {
+            <tr>
+                <td class="row"> <img height="100" width="100" src="data:image/png;base64,@item.Product.image"/>
+                @item.Product.title
+                </td>
+                <td>@item.Product.price</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Product.price * item.Quantity)</td>
+            </tr>
+             
+}
+<tr>
+            <td align="right" colspan="6">Sum</td>
+            <td>
+                @ViewBag.total
+            </td>
+        </tr>
+    </tbody>
+</table>
+    <br>
+    <a asp-controller="Home" asp-action="index">Continue Shopping</a>
+    <a class="btn btn-primary" asp-controller="cart" asp-action="myProduct">buy Now</a>
+        }
+</body>
+</html>

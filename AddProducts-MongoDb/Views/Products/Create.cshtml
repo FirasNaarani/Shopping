@@ -1,0 +1,86 @@
+﻿@model AddProducts_MongoDb.Models.Products
+@{
+   ViewData["Title"] = "Create";
+}
+
+<h1>Create New Product</h1>
+<hr />
+<div class="row" style="width:100%">
+    <div class="col-md-4" style="background-color:aliceblue">
+        <form asp-action="CreatePost" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div> 
+             <div class="form-group">
+                <label asp-for="title" class="control-label"></label>
+                <input asp-for="title" class="form-control" placeholder="title" />
+                <span asp-validation-for="title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="type" class="control-label"></label>
+                <input asp-for="type" class="form-control" placeholder="type" />
+                <span asp-validation-for="type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gender" class="control-label"></label>
+                 <select class="form-control" asp-for="gender">
+                     <option selected disabled hidden>Select Gender</option> 
+                     <option>Male</option>
+                     <option>Female</option> 
+                </select>
+                <span asp-validation-for="gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="size" class="control-label"></label>
+                <input asp-for="size" class="form-control" placeholder="size" />
+                <span asp-validation-for="size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" placeholder="price" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="color" class="control-label"></label>
+                <div class="searchText1">
+                    <input asp-for="color" class="form-control" type="color" list="profilecolorslist">
+                    <datalist id="profilecolorslist">
+                        <option value="#000000">Black</option>
+                        <option value="#ffffff" />
+                        <option value="#ff0000" />
+                        <option value="#00ff00" />
+                        <option value="#0000ff" />
+                        <option value="#ffff00" />
+                        <option value="#ffaa00" />
+                        <option value="#ff00ff" />
+                    </datalist>
+                </div>
+                <span asp-validation-for="color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" placeholder="Description" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="brand" class="control-label"></label>
+                <input asp-for="brand" class="form-control" placeholder="brand" />
+                <span asp-validation-for="brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="image" class="control-label"></label>
+                <input type="file" name="image" class="form-control" />
+                <span asp-validation-for="image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

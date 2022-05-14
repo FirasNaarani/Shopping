@@ -1,0 +1,59 @@
+﻿@model StoreProducts.Models.MyPurchases
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>MyPurchases</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreatePost" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+             <div class="contactdetails">
+               <h5>CONTACT DETAILS</h5>
+               <div class="contactDetailsInputs">
+            <div class="form-group" style="margin-right:20px">
+                <label asp-for="ClientName" class="control-label"></label>
+                <input asp-for="ClientName" class="form-control" placeholder="Name" />
+                <span asp-validation-for="ClientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="PhoneNumber" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+               </div>
+                <div class="contactDetailsInputs">
+           <div class="form-group">
+                <label asp-for="ClientAddress" class="control-label"></label>
+                <input asp-for="ClientAddress" class="form-control" placeholder="Address" />
+                <span asp-validation-for="ClientAddress" class="text-danger"></span>
+            </div>
+            </div>
+            </div>
+              <div class="contactdetails">
+               <h5>ViSA DETAILS</h5>
+               <div class="contactDetailsInputs">
+                     <div class="form-group" style="margin-right:20px" >
+                <label asp-for="VisaNumber" class="control-label"></label>
+                <input asp-for="VisaNumber" class="form-control" placeholder="VISA Number" />
+                <span asp-validation-for="VisaNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">CVC</label>
+                <input type="text" class="form-control" placeholder="CVC" />
+            </div>
+               </div>
+             
+               </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
